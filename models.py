@@ -30,6 +30,32 @@ class Cliente(db.Model):
     estado = db.Column(db.Integer, nullable= False)
     # comuna_id = db.Column(db.Integer, nullable = False) 
 
+    def serialize(self):
+        return {
+            "id": self.id,
+            "rut": self.rut,
+            "dv": self.dv,
+            "primer_nombre": self.primer_nombre,
+            "segundo_nombre": self.segundo_nombre,
+            "apellido_paterno": self.apellido_paterno,
+            "apellido_materno": self.apellido_materno,
+            "direccion": self.direccion,
+            "telefono": self.telefono,
+            "correo" : self.correo,
+            "estado": self.estado
+        }
+    
+    def save(self):
+        db.session.add(self)
+        db.session.commit()
+
+    def update(self):
+        db.session.commit()
+
+    def delete(self):
+        db.session.delete(self)
+        db.session.commit()
+
 class Vendedor(db.Model):
     __tablename__ = 'Vendedor'
     id = db.Column(db.Integer, primary_key = True)
@@ -73,7 +99,7 @@ class Descuento_Producto(db.Model):
 
 class Producto(db.Model):
     __tablename__= 'Producto'
-    id = db.Column(db.Intenger, primary_key = True)
+    id = db.Column(db.Integer, primary_key = True)
     codigo = db.Column(db.String(250), nullable = False)
     nombre = db.Column(db.String(250), nullable = False)
     valor_venta = db.Column(db.Integer, nullable = False)
@@ -84,14 +110,14 @@ class Producto(db.Model):
 
 class Suscripcion(db.Model):
     __tablaname__ = 'Suscripcion'
-    id = db.Column(db.Intenger, primary_key = True)
+    id = db.Column(db.Integer, primary_key = True)
     fecha_inicio = db.Column(db.DateTime, nullable = False)
     fecha_termino = db.Column(db.DateTime, nullable = True)
     # cliente_id = db.Column(db.Integer, nullable = False) 
         
 class Donacion(db.Model):
     __tablename__ = 'Donacion'
-    id = db.Column(db.Intenger, primary_key = True)
+    id = db.Column(db.Integer, primary_key = True)
     valor = db.Column(db.Integer, nullable = False)
     fecha = db.Column(db.DateTime, nullable = False)
     # cliente_id = db.Column(db.Integer, nullable = False) 
