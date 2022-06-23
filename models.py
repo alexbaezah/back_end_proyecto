@@ -108,6 +108,29 @@ class Producto(db.Model):
     imagen = db.Column(db.String(250), nullable = True)
     estado = db.Column(db.Integer, nullable = True )
 
+    def serialize(self):
+        return {
+            "id": self.id,
+            "codigo": self.codigo, 
+            "nombre": self.nombre,
+            "valor_venta": self.valor_venta,
+            "Stock": self.Stock, 
+            "descripcion": self.descripcion,
+            "imagen": self.imagen,
+            "estado": self.estado
+        }
+    
+    def save(self):
+        db.session.add(self)
+        db.session.commit()
+
+    def update(self):
+        db.session.commit()
+
+    def delete(self):
+        db.session.delete(self)
+        db.session.commit()
+
 class Suscripcion(db.Model):
     __tablaname__ = 'Suscripcion'
     id = db.Column(db.Integer, primary_key = True)

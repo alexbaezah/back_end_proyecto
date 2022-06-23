@@ -2,7 +2,7 @@
 # 1. importamos la libreria flask
 from flask import Flask, request, jsonify
 from flask_migrate import Migrate
-from models import db, Cliente
+from models import db, Cliente, Producto
 from flask_cors import CORS, cross_origin
 
 # 2. Creamos la aplicacion
@@ -113,5 +113,73 @@ def addCliente():
 # 7. ejecutamos el comando flask db migrate
 # 8. ejecutamos el comando flask db upgrade
 # 9. ejecutamos el comando flask run --host=0.0.0.0 en caso que tengamos problemas con el cors
+
+# Consulta todos los productos
+@app.route('/productos', methods=['GET'])
+def getProductos():
+    producto = Producto.query.all()
+    producto = list(map(lambda x: x.serialize(), producto))
+    return jsonify(producto),200
+
+#Consulta solo por un producto según id y me devuelve 1
+@app.route('/productos/<id>', methods=['GET'])
+def getProducto(id):
+    producto = Producto.query.get('id')
+    return jsonify(producto.serialize()), 200
+
+#Borrar produco según id
+@app.route('/productos/<id>', methods=['DELETE'])
+def deleteProducto(id):
+    producto = Producto.query.get('id')
+    Producto.delete(producto)
+    return jsonify(producto.serialize()), 200
+
+#modificar usuario
+@app.route('/productos/<id>', methods=['PUT'])
+def updateProducto(id):
+    producto = Producto.query.get('id')
+   
+    codigo = request.json.get('codigo')
+    nombre = request.json.get('nombre')
+    valor_venta = request.json.get('valor_venta')
+    Stock = request.json.get('Stock')
+    descripcion = request.json.get('descripcion')
+    imagen = request.json.get('imagen')
+    estado = request.json.get('estado')
+
+    producto.codigo = codigo 
+    producto.nombre = nombre
+    producto.valor_venta = valor_venta
+    producto.Stock = Stock 
+    producto.descripcion = descripcion 
+    producto.imagen = imagen
+    producto.estado = estado 
+    Producto.save(producto)
+
+    return jsonify(producto.serialize()),200
+
+@app.route('/productos', methods=['POST'])
+def addProducto():
+    producto = Producto()
+    codigo = request.json.get('codigo')
+    nombre = request.json.get('nombre')
+    valor_venta = request.json.get('valor_venta')
+    Stock = request.json.get('Stock')
+    descripcion = request.json.get('descripcion')
+    imagen = request.json.get('imagen')
+    estado = request.json.get('estado')
+
+    producto.codigo = codigo 
+    producto.nombre = nombre
+    producto.valor_venta = valor_venta
+    producto.Stock = Stock 
+    producto.descripcion = descripcion 
+    producto.imagen = imagen
+    producto.estado = estado 
+    Producto.save(producto)
+
+    return jsonify(producto.serialize()),200
+
+
 if __name__ == '__main__':
     app.run(port=3000, debug=True)
