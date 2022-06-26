@@ -1,0 +1,272 @@
+img{
+    border-radius: 4px;
+}
+
+/*slider*/
+.slider{
+    padding-top: 4rem;
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+.slider ul{
+    display:flex;
+    padding: 0;
+    width: 300%;
+    animation: cambio 20s infinite;
+    animation-direction: alternate;
+    animation-timing-function:linear;
+}
+.slider li{
+    list-style: none;
+    width: 100%;
+}
+.slider img{
+    width: 100%;
+}
+
+.contenedor-columna{
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+}
+
+/*columnas*/
+.columna1{
+    width: 50%;
+    /* float: left;
+    padding-left: 25px; */
+    text-align: center;
+}
+
+.columna2{
+    /* width: 40%;
+    float: right; */
+}
+.columna2 img{
+    width: 450px;
+}
+
+@keyframes cambio{
+    0%{margin-left: 0;}
+    30%{margin-left:0;}
+
+    35%{margin-left: -100%;}
+    65%{margin-left: -100%;}
+
+    70%{margin-left: -200%;}
+    100%{margin-left: -200%;}
+}
+
+
+/*circulo imagenes*/
+.container-circulos{
+    /* display:flex; */
+    width: 100%;
+    padding: 20px;
+}
+.container-imagen{
+    width: 33%;
+    display:inline-block; 
+    align-items: center;
+    flex-direction: column;
+    text-align:center;
+    padding: 20px;
+}
+.container-imagen h2{
+    font-weight: 600;
+}
+.circulo{    
+    width: 60%;
+    border-radius: 50%;
+    border:2px solid  #DF691A;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+}
+.ver-todo{
+    margin: 50px 0;
+    width: 100%;
+    text-align: center;
+}
+.contenedor-columna{
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+}
+
+
+/*contacto*/
+.container-contacto{
+    background-image: url("../img/bg-contacto.jpg");
+    background-size: 100vw 100vh;
+    background-attachment: fixed;
+    margin:0;
+    padding: 6rem 0;
+}
+.container-contacto form{
+   
+    width: 450px;
+    margin:auto;
+    background:rgba(0,0,0,0.4);
+    padding: 10px 20px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    border-radius: 7px;
+}  
+.container-contacto form h2{
+    color: #f2f2f2;
+    text-align: center;
+    margin:0;
+    font-size: 30px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+.container-contacto form input,textarea{
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 7px;
+    box-sizing: border-box;
+    font-size: 17px;
+    border:none;
+}
+.container-contacto form textarea{
+    min-height: 100px;
+    max-height: 200px;
+    max-width: 100%;
+}
+
+
+
+
+
+
+
+
+/*footer*/
+.footer-menu ul {
+    margin: 0px;
+    padding: 0px;
+}
+.container-footer {
+    max-width: 1140px;
+}
+.copyright-area{
+  background: #202020;
+  padding: 25px 0;
+}
+.copyright-text p {
+  margin: 0;
+  font-size: 14px;
+  color: #878787;
+}
+.copyright-text p a{
+  color: #ff5e14;
+  text-decoration: none;
+}
+.footer-menu li {
+  display: inline-block;
+  margin-left: 20px;
+}
+.footer-menu li:hover a{
+  color: #ff5e14;
+}
+.footer-menu li a {
+  font-size: 14px;
+  color: #878787;
+  text-decoration: none;
+}
+.row-footer {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.text-lg-left {
+    text-align: left !important;
+}
+.text-right {
+    text-align: right !important;
+}
+.col-xl-6 {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+.d-lg-block {
+    display: block !important;
+}
+
+.col-xl-6{
+	    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+.container-footer {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.sidebar{
+    width: 250px;
+    position: fixed;
+    left: 0;
+    top: 58px;
+    height:100%; 
+    background: beige;
+}
+
+.tablaCompras{
+    padding-left: 250px;
+    display: block;
+
+}
+
+
+@media (max-width: 800px) {
+
+    
+
+  
+
+    /*slider*/
+    .slider{
+        padding-top: 5rem;
+    }
+
+
+    /*circulo imagenes*/
+    .container-imagen{
+        width: 70%;
+        display: block;
+        margin: 0 auto;
+    }
+
+
+    /*contacto*/
+    .container-contacto form{
+        width: 100%;
+    }
+
+
+   
+
+   
+}

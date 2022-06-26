@@ -34,20 +34,20 @@ def getClientes():
 # consulta solo un usuario según su id y me devuelve 1
 @app.route('/clientes/<id>', methods=['GET'])
 def getCliente(id):
-    cliente = Cliente.query.get('id')
+    cliente = Cliente.query.get(id)
     return jsonify(cliente.serialize()),200
 
 # borrar usuario segun id
 @app.route('/clientes/<id>', methods=['DELETE'])
 def deleteCliente(id):
-    cliente = Cliente.query.get('id')
+    cliente = Cliente.query.get(id)
     Cliente.delete(cliente)
     return jsonify(cliente.serialize()),200
 
 # modificar usuario
 @app.route('/clientes/<id>', methods=['PUT'])
 def updateCliente(id):
-    cliente = Cliente.query.get('id')
+    cliente = Cliente.query.get(id)
 
     rut = request.json.get('rut')
     dv = request.json.get('dv')
@@ -124,20 +124,20 @@ def getProductos():
 #Consulta solo por un producto según id y me devuelve 1
 @app.route('/productos/<id>', methods=['GET'])
 def getProducto(id):
-    producto = Producto.query.get('id')
+    producto = Producto.query.get(id)
     return jsonify(producto.serialize()), 200
 
 #Borrar produco según id
 @app.route('/productos/<id>', methods=['DELETE'])
 def deleteProducto(id):
-    producto = Producto.query.get('id')
+    producto = Producto.query.get(id)
     Producto.delete(producto)
     return jsonify(producto.serialize()), 200
 
 #modificar usuario
 @app.route('/productos/<id>', methods=['PUT'])
 def updateProducto(id):
-    producto = Producto.query.get('id')
+    producto = Producto.query.get(id)
    
     codigo = request.json.get('codigo')
     nombre = request.json.get('nombre')
