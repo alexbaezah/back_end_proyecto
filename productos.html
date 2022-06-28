@@ -28,14 +28,15 @@
         success:function(respuesta){
           console.log(respuesta);
             for (var i = 0; i < respuesta.length; i++){
-              var fila =   
-                            '<div class="card" style="width: 18rem;"> ' +
-                              '<img src=' + respuesta[i].imagen + ' height="300  width="200" class="card-img-top" alt="...">'+
-                              ' <div class="card-body"' +
-                                ' <h5 class="card-title"> '+ respuesta[i].nombre +' </h5>'+
-                                ' <p class="card-text">' +respuesta[i].descripcion + ' </p>'+
-                                ' <a href="correa2.html" class="btn btn-primary">Detalles</a>'+
-                              '</div>'+
+              var fila =    '<div class="col mb-3">' +
+                              '<div class="card" style="width: 18rem;"> ' +
+                                '<img src=' + respuesta[i].imagen + ' height="300  width="200" class="card-img-top" alt="...">'+
+                                ' <div class="card-body"' +
+                                  ' <h5 class="card-title"> '+ respuesta[i].nombre +' </h5>'+
+                                  ' <p class="card-text">' +respuesta[i].descripcion + ' </p>'+
+                                  ' <a href="correa2.html" class="btn btn-primary">Detalles</a>'+
+                                '</div>'+
+                              '</div>'+  
                             '</div>';
                             
                           $('#cardProducto').append(fila)      
@@ -81,8 +82,10 @@
     </nav>
 
     <h1>Productos</h1>
-
-    <div  id="cardProducto" class="col mb-3">
+    <div class="row row-cols-1 row-cols-md-4" id="cardProducto" >
+  
+    </div>
+    
  
     </div> 
 
