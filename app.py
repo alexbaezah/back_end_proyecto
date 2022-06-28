@@ -24,6 +24,8 @@ Migrate(app, db)
 def index():
     return 'Hola mundo'
 
+
+
     # Consultar todos
 @app.route('/clientes', methods=['GET'])
 def getClientes():
