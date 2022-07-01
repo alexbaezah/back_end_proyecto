@@ -14,87 +14,89 @@
 <body>
  
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="index.html">
-      <img src="https://previews.123rf.com/images/jemastock/jemastock1611/jemastock161103744/65881773-perro-gato-y-el-p%C3%A1jaro-sobre-el-icono-manos-mascota-dom%C3%A9stica-y-el-cuidado-de-los-animales-tema-dise.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
-      MascotaShop </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="index.html">Inicio <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item active">
-              <a class="nav-link" href="productos.html">Productos <span class="sr-only">(current)</span></a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="index.html">
+        <img src="https://previews.123rf.com/images/jemastock/jemastock1611/jemastock161103744/65881773-perro-gato-y-el-p%C3%A1jaro-sobre-el-icono-manos-mascota-dom%C3%A9stica-y-el-cuidado-de-los-animales-tema-dise.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
+        MascotaShop </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Inicio <span class="sr-only">(current)</span></a>
             </li>
-          <li class="nav-item active">
-              <a class="nav-link" href="registrar.html">Regístrarse<span class="sr-only">(current)</span></a>
-          </li>  
-          
-
-          <li class="nav-item active">
-            <a class="nav-link" href="compras.html">Mi Carro <span class="sr-only">(current)</span> </a>
-          </li>
-        </ul>
-      </div>
-  </nav>
+            <li class="nav-item active">
+                <a class="nav-link" href="productos.html">Productos <span class="sr-only">(current)</span></a>
+              </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="login.html">Iniciar Sesión<span class="sr-only">(current)</span></a>
+            </li>  
+            <li class="nav-item active">
+              <a class="nav-link" href="usuario.html">Mi Perfil<span class="sr-only">(current)</span></a>
+            </li>  
+            <li class="nav-item active">
+              <a class="nav-link" href="compras.html">Mi Carro <span class="sr-only">(current)</span> </a>
+            </li>
+          </ul>
+        </div>
+    </nav>
 
 <h3>Tus datos</h3>
 <p>Datos de envío para notificación de compra y despacho</p>
 
 <form>
+<div>
   <div class="form-row">
     <div class="col-md-6 mb-3">
-      <label for="validationDefault01">Nombre</label>
-      <input type="text" class="form-control" id="validationDefault01" required>
+      <label for="inputPrimerNombre">Nombre</label>
+      <input type="text" class="form-control" id="inputNombre" placeholder="">
     </div>
     <div class="col-md-6 mb-3">
-      <label for="validationDefault02">Apellido</label>
-      <input type="text" class="form-control" id="validationDefault02" required>
+      <label for="inputSegundoNombre">Apellido</label>
+      <input type="text" class="form-control" id="inputApellido" placeholder="">
     </div>
   </div>
   <div class="form-row">
     <div class="col-md-3 mb-3">
-      <label for="validationDefault03">Rut</label>
-      <input type="text" class="form-control" id="validationDefault03" required placeholder="11111111-1">
+      <label for="inputRut">Rut</label>
+      <input type="text" class="form-control" id="inputRut" placeholder="11111111-1">
     </div>
     <div class="col-md-3 mb-3">
-      <label for="validationDefault04">Correo</label>
-      <input type="text" class="form-control" id="validationDefault04" required>
+      <label for="inputCorreo">Correo</label>
+      <input type="email" class="form-control" id="inputCorreo">
     </div>
     <div class="col-md-3 mb-3">
-      <label for="validationDefault05">Teléfono</label>
-      <input type="text" class="form-control" id="validationDefault05" required placeholder="999999999">
+      <label for="inputTelefono">Teléfono</label>
+      <input type="text" class="form-control" id="inputTelefono">
     </div>
   </div>
   <div class="form-row">
     <div class="col-md-6 mb-3">
-      <label for="validationDefault06">Dirección</label>
-      <input type="text" class="form-control" id="validationDefault06" required>
+      <label for="inputDireccion">Dirección</label>
+      <input type="text" class="form-control" id="inputDireccion">
     </div>
     <div class="col-md-3 mb-3">
-      <label for="validationDefault07">Región</label>
-      <select class="custom-select" id="validationDefault07" required>
-        <option selected disabled value="">Choose...</option>
-        <option>...</option>
-      </select>
+      <label for="inputRegion">Región</label>
+                <select id="inputRegion" class="form-control">
+                <option selected>Región</option>
+                <option>...</option>
+                </select>
     </div>
     <div class="col-md-3 mb-3">
-      <label for="validationDefault08">Comuna</label>
-      <select class="custom-select" id="validationDefault08" required>
-        <option selected disabled value="">Choose...</option>
-        <option>...</option>
+      <label for="inputComuna">Comuna</label>
+      <select id="inputComuna" class="form-control">
+      <option selected>Comuna</option>
+      <option>...</option>
       </select>
     </div>
   </div>
   
-  <button class="btn btn-danger">Continuar pago</button>
+  <button class="btn btn-danger"><a href="detalle_venta.html">Continuar pago</a></button>
   <!--<button class="btn btn-danger" type="submit">Continuar pago</button>-->
 </form>
 
-<button class="btn btn-move-left btn-round"><i class="nc-icon nc-minimal-left"></i> Volver</button>
+<a href="compras.html" class="btn btn-ligth">Volver</a>
 
 
 </body>
